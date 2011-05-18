@@ -112,6 +112,51 @@ blackberry.system ={
 		softwareVersion:null,
 		
 		/**
+		 * @type String
+		 * @description Gets or sets the power mode setting to switch to when the application becomes inactive.
+		 * <p/>
+		 * States are defined as
+		 * <br>NORMAL    = "normal";
+		 * <br>STANDBY   = "standby";
+		 * <br>THROTTLED = "throttled";
+		 * @PB10
+		 */
+		inactivePowerMode:null,
+		
+		/**
+		 * @type String
+		 * @description Gets or sets the current power mode setting.
+		 * <p/>
+		 * States are defined as
+		 * <br>NORMAL    = "normal";
+		 * <br>STANDBY   = "standby";
+		 * <br>THROTTLED = "throttled";
+		 * @PB10
+		 */
+		powerMode:null,
+		
+		/**
+		 * @type String
+		 * @description Returns a String representing the current system state.
+		 * <p/>
+		 * One of:
+		 * <br>ACTIVE   = "active";
+		 * <br>STANDBY  = "standby";
+		 * @readOnly
+		 * @PB10
+		 */
+		systemState:null,
+		
+		/**
+		 * @type Integer
+		 * @description The duration (in milliseconds) of inactivity that must occur before the player switches out of normal power mode.
+		 * For example, if the power mode is set to QNXSystemPowerMode.STANDBY, the mode will remain in normal power mode until no window updates occur for this period of time.
+		 * @PB10
+		 */
+		transitionTime:null,
+		
+		
+		/**
 		 * @constant
 		 * @type Number
 		 * @description Returned by hasPermission() indicating that the module requested is accessible.
@@ -128,5 +173,41 @@ blackberry.system ={
 		 * @BB50+
 		 * @PB10
 		 */
-		DENY:1
+		DENY:1,
+		
+		/**
+		 * @constant
+		 * @type String
+		 * @description Possible value of systemState indicating the system is currently active
+		 * @default "active"
+		 * @PB10
+		 */
+		ACTIVE: "active",
+		
+		/**
+		 * @constant
+		 * @type String
+		 * @description Possible value of systemState, powerMode, inactivePowerMode
+		 * @default "standby"
+		 * @PB10
+		 */
+		STANDBY: "standby",
+		
+		/**
+		 * @constant
+		 * @type String
+		 * @description Possible value of powerMode, inactivePowerMode
+		 * @default "normal"
+		 * @PB10
+		 */
+		NORMAL: "normal",
+		
+		/**
+		 * @constant
+		 * @type String
+		 * @description Possible value of powerMode, inactivePowerMode
+		 * @default "throttled"
+		 * @PB10
+		 */
+		THROTTLED: "throttled"
 };
